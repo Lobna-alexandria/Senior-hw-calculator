@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Raleway:200,100,400" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet"  href="css/all.css">
+    <link rel="stylesheet" href="css/animate.min.css" /> 
+    
+    <link rel="stylesheet"  href="css/hover.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <link rel="stylesheet"  href="css/bootstrap.css" />
+    <link rel="js"  href="css/bootstrap.js" />
+   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+
+    <style>
+
+        body{background: rgb(243, 245, 247);}
+        .parent{display: flex;justify-content: space-around;
+        align-items:space-around;}
+        /*.child{justify-content: space-around;}*/
+
+        .w-22{width: 22%;}
+        .w-60{width: 65%;}
+        .w-30{width: 30%}
+        .w-40{width: 48%}
+        .h-10{height: 15%;}
+
+        .bordera{border: red solid;}
+
+        .borderblack{border: solid 1px black;}
+        .top-12{top:6.5%;}
+
+        .top-100{top:95% !important}
+        
+        .start-100{left: 95% !important;
+        background-size: cover;}
+
+        #moon {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      box-shadow:   -30px  0 0 0 rgb(20, 167, 45);
+    }
+
+    </style>
+</head>
+
+
+
+<body>
+
+  <div class="row">
+
+ <div class="col-12 col-md-3 p-4 ">
+   <div class="row row-cols-1 mx-auto ">
+
+ <div >  <button class="btn on  leftPan" style="background-color: coral;">off</button></div>
+ <div> 
+  <label for="formFile" class="form-label">Choose Bg-Picture</label>
+ <div class="row"> <input class="form-control  col" type="file" id="formFile" >
+   <button class="col ms-2 btn save_pic"><i class="far fa-save fs-2 text-danger hvr-pop " title="Save Theme"></i></button></div>
+
+</div>
+
+ <div>  <button class="btn leftPan flip-x "> flip-x</button> </div>
+ <div>  <button class="btn leftPan flip_y ">Rotate</button></div>
+ <div>  <button class="btn leftPan zoom">Zoom</button></div>
+ <div>  <button class="btn leftPan zoom_ot">zoom-out</button></div>
+ 
+
+ </div></div>
+
+<div class="container  col-12 col-md-6 calc my-5  p-4 rounded-3 parent borderblack justify-content-start align-items-end
+animate__animated 
+animate__zoomIn
+ animate__slow" 
+style="height: 550px;" >
+    
+    
+     <div id="resultvarAll" class="my-2  fs-3 position-absolute w-30 h-10 top-12 text-break " ></div>
+
+
+    <div class="row parent w-60" >
+
+
+        <div id="resultvar" class="my-2 col-12 fs-1 fw-bold text-nowrap " ></div>
+     
+        <button class="btn memory memoryDed">M-</button>
+        <button class="btn memory memoryAdd" onclick=" memoryAdd()">M+</button>
+        <button class="btn memory memoryShow">MR</button>
+        <button class="btn memory memoryClr">MC</button>
+       
+
+        <button class="btn deal Back">Back</button>
+        <button class="btn clear">C</button>
+        <button class="btn deal clear-history">CL.H</button>
+        <button class="btn opr">%</button>
+       
+        <button class="btn math">1/x</button>
+        <button class="btn math power">x^2  </button>
+        <button class="btn math sqrt">sqr/ </button>
+        <button class="btn opr">÷</button>
+      
+        <button class="btn num ">7</button>
+        <button class="btn num ">8</button>
+        <button class="btn num ">9</button>
+        <button class="btn opr">*</button>
+
+        <button class="btn num ">4</button>
+        <button class="btn num">5</button>
+        <button class="btn num">6</button>
+        <button class="btn opr">-</button>
+
+
+        <button class="btn num">1</button>
+        <button class="btn num">2</button>
+        <button class="btn num">3</button>
+        <button class="btn opr">+</button>
+
+        <button class="btn sign">+/-</button>
+        <button class="btn num">0</button> 
+        <button class="btn num">.</button> 
+        <button class="btn  equal">=</button>
+       
+        <button class="btn bgc" style="background-color: cadetblue;"></button>
+        <button class="btn bgc" style="background-color:rgb(206, 200, 168);"></button> 
+        <button class="btn bgc" style="background-color:rgb(231, 229, 226);"></button> 
+        <button class="btn bgc" style="background-color:rgb(166, 209, 182);"></button>
+       
+        <button class="btn bgc" style="background-color: rgb(149, 173, 173);"></button>
+        <button class="btn bgc" style="background-color:rgb(240, 233, 194);"></button> 
+        <button class="btn bgc" style="background-color:rgb(250, 221, 239);"></button> 
+        <button class="btn bgc" style="background-color:rgb(219, 235, 225);"></button>
+        
+      
+    </div>
+
+    <div class=" w-40 ">
+    <div id="memoryContainer" class="memory  borderblack rounded-3 shadow ms-5 p-2 my-2" style="height: 50px;">
+    
+     </div>
+
+   <div id="historyContainer" class="history memory borderblack rounded-3 shadow ms-5 p-2 d-flex align-items-end justify-content-end"
+    style="height: 450px;">
+  <div id="history" class="h-100 w-100" ></div>
+      <i id="trash" class="fas fa-trash-alt hvr-pop " title="Clear History"></i> 
+  </div>
+
+</div>
+</div>
+
+
+<div  class="col-12 col-md-3 " >
+  <span class="fas fa-thumbs-up fs-1 hvr-pop text-info my-5 " style="text-shadow: 4px 5px 9px #4233C0;"></span>   
+ 
+  <div id="like" class="row " >
+    <div id="moon" class="ms-5"  hidden> </div>
+    <div class="ramadan position-absolute py-4 ms-5 fs-1" style="font-family: 'Reem Kufi', sans-serif;" hidden>رمضان كريم </div>
+    <div id="sign" class="position-relative text-center fs-1 text-danger" 
+    style="top: 200px;font-family: 'Lobster', cursive;" hidden>Thank You ..... Lobna </div>
+  </div>
+  
+</div>
+</div>
+
+</div>
+
+
+</div> <!-- row -->
+
+
+
+<script>
+"use strict"
+
+    $(document).ready(function()
+    
+    {
+       
+      $(".leftPan").addClass("w-50 col my-3").css("background-color","coral")  
+
+           $(".save_pic").click(function() {
+                var geekss = "media/"+$('#formFile')[0].files[0].name;
+               // alert(geekss)
+        //  $(".calc").css("background-image=url(media/+geekss+)")  
+          
+          $(".calc").css({"background-image": "url(" + geekss + ")" ,
+          "background-size": "cover",
+          "background-repeat":"no-repeat"
+             }); 
+
+            })
+     
+
+     $('input[type="file"]').change(function(e) {
+                var geekss = e.target.files[0].name;
+             //   alert(geekss + ' is the selected file.')
+  
+            })
+     
+
+
+
+        var num1 , num2 , flag = 0 ,opr1
+        $("#resultvar").text("")
+        $("#resultvarAll").text("")
+
+      $("button").addClass(" col-3 w-22  my-1 btn-outline-dark hvr-grow-shadow")
+     
+      $(".opr ,.equal").css("backgroundColor","rgb(255,174,174)");
+     
+      $(".num ,.sign").css("backgroundColor","rgb(174,223,223)");
+
+      $(".math ,.deal ,.clear").css("backgroundColor","rgb(204,255,204)");
+      
+      $(".memory ").css("backgroundColor","rgba(204,200,204,.5)");
+     
+
+      $(".num").click(function()    //عند الضغط على رقم
+      { 
+       
+       var resultall = this.innerText;//الرقم فقط المكتوب على الزرار
+              
+       $("#resultvar").append(resultall)
+       
+       //alert(resultall +" "+"flag= "+flag)
+       
+       if(flag == 1) //يوجد رقم اول 
+          {//alert(flag) 
+            num2=$("#resultvar").text()
+           // flag=2
+          // flag=1
+           }
+
+           if(flag == 2)
+           {//ضغط على يساوى
+                     
+           $("#resultvar").empty()
+           $("#resultvarAll").empty()
+              flag=1
+           resultall = this.innerText;//الرقم فقط المكتوب على الزرار
+              
+              $("#resultvar").append(resultall)
+                 }
+          
+     })
+     
+          
+      $(".num, .opr ,.equal, .sqrt").click(function()
+      { 
+       var resultall = this.innerText;// الرقم المكتوب على الزرار//يكتب الارقام و العمليات فوق
+               
+       $("#resultvarAll").append(resultall)
+      
+     })
+
+     $(".opr").click(function()
+     {
+     ///عند الضغط على عمليه حسابيه مثل الجمع
+       //يخزن الرقم الاول فى متغير
+        //يمسح السبان عشان يضع الرقم التالي        
+       opr1=this.innerText
+      
+       num1 = $("#resultvar").text()
+       $("#resultvar").empty()
+      // alert(num1)
+        flag=1
+     })
+
+
+     $(".equal").click(function()
+     {//alert(Number( num1) +Number(num2) )
+      // alert((opr1))
+       flag=2
+       if(opr1 === "+")
+       { $("#resultvar").text(Number( num1) + Number(num2))}
+       
+       if(opr1 === "-")
+       { $("#resultvar").text(Number( num1) - Number(num2))}
+       
+       if(opr1 === "*")
+       { $("#resultvar").text(Number( num1) * Number(num2))}
+       
+       if(opr1 === "÷")
+       { $("#resultvar").text(Number( num1) / Number(num2))}
+       
+       var netReasult=$("#resultvar").text()
+       //alert(netReasult)
+
+       $("#resultvarAll").append(netReasult)   
+       
+       
+       var hist = $("#resultvarAll").text()
+       
+       var txt2 = $("<p></p>").text(hist)
+
+      $("#history").prepend(txt2);
+     
+    })  
+
+
+    $(".sign").click(function()
+      {// 
+      var  resultall = $("#resultvar").text();
+        //alert(resultall)
+       $("#resultvarAll").text(resultall*(-1))
+       $("#resultvar").text(resultall*(-1))
+     }) 
+
+     $(".clear").click(function()
+      { 
+             
+       $("#resultvar").empty()
+       $("#resultvarAll").empty()
+      flag=0
+      
+     }) 
+
+     $(".sqrt").click(function()
+      { 
+        var sqt= Math.sqrt($("#resultvar").text())
+      //  alert(sqt)   
+        $("#resultvar").text(sqt) 
+       //alert(netReasult)
+
+       $("#resultvarAll").append(sqt)   
+      }) 
+     
+
+      $("#trash").click(function()
+      { 
+        $("p").addClass("animate__fadeOutDown animate__animated text-danger")
+      })       
+
+     
+     $(".bgc").click(function()
+      {// تلوين الخلفية
+
+       $(".calc").css("background-image", "url()" )//حذف الصورة لو وجدت
+
+       var color1=$(this).css("backgroundColor")
+            
+       $(".container").css("background-color",color1);
+      }) 
+
+
+     $(".on").click(function()
+      { 
+        $(".calc").removeClass("animate__flipInX animate__flip animate__zoomIn animate__zoomOut animate__rotateIn") 
+
+       $(".calc").slideToggle()
+            
+      if ($(this).html()=="off") {
+          $(this).html("on")
+          $(this).css("background-color","red")         
+       }
+
+     else if ($(this).html()=="on") {
+             $(this).html("off")
+             $(this).css({"background-color":"black","color":"white"}) 
+      }
+     }) 
+
+
+     $(".memoryClr").click(function()
+      {   
+        $("#memoryContainer").empty()      
+                
+     }) 
+     
+
+     $(".memoryDed").click(function()
+      {   
+        var a= $("#resultvar").text(),
+      b= $("#memoryContainer").text()
+      b= Number(b) -  Number(a) 
+      $("#memoryContainer").text(b);     
+                
+     }) 
+
+      
+     $(".flip-x").click(function()
+      {  $(".calc").removeClass("animate__rotateIn  animate__zoomIn") 
+       
+     
+        {$(".calc").addClass(" animate__flip ") }
+                 
+        
+     }) 
+                
+     $(".flip_y").click(function()
+      {   $(".calc").removeClass("animate__flipInX animate__flip animate__zoomIn animate__zoomOut")  
+
+      
+          $(".calc").addClass("animate__animated animate__rotateIn") 
+                
+              
+     }) 
+     
+          
+     $(".zoom").click(function()
+      {   $(".calc").removeClass("animate__flipInX animate__flip animate__zoomIn animate__rotateIn animate__zoomOut")  
+
+      
+          $(".calc").addClass("animate__animated animate__zoomIn") 
+                
+              
+     }) 
+
+     $(".zoom_ot").click(function()
+      {   $(".calc").removeClass("animate__flipInX animate__flip animate__zoomIn ")  
+
+      
+          $(".calc").addClass("animate__animated animate__zoomOut") 
+     }) 
+
+
+     $(".fa-thumbs-up").click(function()
+      { 
+      $("#moon").removeAttr("hidden")
+      $("#moon").addClass("animate__animated animate__zoomIn animate__slow animate__repeat-2")
+
+      $(".ramadan").removeAttr("hidden")
+      $(".ramadan").addClass("animate__animated animate__zoomIn animate__slow animate__dalay-1s")
+
+      $("#sign").removeAttr("hidden")
+      $("#sign").addClass("animate__animated animate__bounceInDown animate__slower animate__delay-3s")
+
+       
+     }) 
+
+     
+
+
+    });
+
+function memoryAdd()
+{ 
+  var a= $("#resultvar").text(),
+      b= $("#memoryContainer").text()
+      b= Number(a) + Number(b) 
+     // alert(b)
+$("#memoryContainer").text(b);
+
+}
+
+</script>
+</body>
+</html>
